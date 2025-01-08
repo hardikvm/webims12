@@ -1,0 +1,36 @@
+.boder-red{
+    border-color:red
+}
+/* .drpbrdr{
+    border: 2px solid grey;
+    width: 200px;
+} */
+.flex{
+    display: flex;
+    align-items: center
+}
+.add-visit {
+    min-height: 80vh;
+    background-blend-mode: overlay;
+  }
+  
+  .add-visit .form-label {
+    color: #ffffff;
+    font-weight: bold;
+  }
+  
+  .add-visit input,
+  .add-visit mat-select {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+  }
+  
+  .add-visit h2 {
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+  }
+
+ .w-100{
+    width: 100%
+ }

@@ -1,0 +1,149 @@
+<!-- 
+<div class="addvisti container bg-grey">
+    <form #addForm="ngForm">
+       
+        <label for="usernam">username </label>
+        <div class="user my-3">
+            <input type="text" name="username" [(ngModel)]="username">
+        </div>
+        <label for="usernam">Booking For </label>
+        <div class="drpbrdr my-3">
+           
+            <mat-select [(value)]="selectedValue">
+              <mat-option *ngFor="let option of visitop" [value]="option.op">
+                {{ option.val}}
+              </mat-option>
+            </mat-select>
+
+
+         
+        </div>
+        <label for="usernam">Visitng Duration</label>
+        <div class="dtrange flex">
+            <label for="usernam">From </label>
+            <div class="user my-2 mx-2">
+                <input
+                type="date"
+                [(ngModel)]="fromDt"
+    
+              />
+            </div>
+            <label for="usernam">To</label>
+            <div class="user my-2 mx-2">
+                <input
+                type="date"
+                [(ngModel)]="toDt"
+                
+              />
+            </div>
+        </div>
+       
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Add Visit</button>
+          </div>
+    </form>
+</div> -->
+
+
+<div id="addvisitform"
+  class="add-visit container bg-light p-5 rounded shadow-lg"
+  style="background-image: url('https://source.unsplash.com/1600x900/?travel'); background-size: cover; background-repeat: no-repeat; background-position: center; color: white;"
+>
+  <form #addForm="ngForm" class="p-4 bg-dark bg-opacity-75 rounded">
+    <h2 class="text-center mb-4">Book Your Visit</h2>
+
+    <div class="mb-3">
+      <label for="username" class="form-label">Username </label>
+      <input
+        type="text"
+        id="username"
+        name="username"
+        class="form-control"
+        placeholder="Enter your name"
+        [(ngModel)]="username"
+      />
+    </div>
+
+    <label for="bookingFor" class="form-label">Booking For</label>
+    <div class="mb-3 w-100">
+      <select id="dropdown" [(ngModel)]="selectedValue" name="selectedValue" class="w-100 py-2">
+        <option *ngFor="let option of visitop" [value]="option.val">
+          {{ option.val }}
+        </option>
+      </select>
+
+      <!-- <mat-form-field class="w-100">
+        
+        <mat-select [(value)]="selectedValue" id="options">
+          <mat-option *ngFor="let option of visitop" [value]="option.op">
+            {{ option.val }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field> -->
+    </div>
+
+    <div class="mb-3">
+        <label for="desc" class="form-label">Description</label>
+        <input
+          type="text"
+          
+          name="desc"
+          class="form-control"
+          [(ngModel)]="desc"
+        />
+      </div>
+
+    <div class="mb-3">
+      <label for="visitDuration" class="form-label">Visiting Duration</label>
+      <div class="row g-3">
+        <!-- 'From' Date Input -->
+        <div class="col-md-5">
+          <label for="fromDate" class="form-label">From</label>
+          <input
+          name="fromDt"
+            type="date"
+            id="fromDate"
+            class="form-control"
+            [(ngModel)]="fromDt"
+          />
+        </div>
+        
+        <!-- 'To' Date Input -->
+        <div class="col-md-5">
+          <label for="toDate" class="form-label">To</label>
+          <input
+          name="toDt"
+            type="date"
+            id="toDate"
+            class="form-control"
+            [(ngModel)]="toDt"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="mb-3">
+        <label for="exp" class="form-label">Expenses</label>
+        <input
+          type="text"
+          
+          name="expenses"
+          class="form-control"
+          [(ngModel)]="expenses"
+        />
+      </div> -->
+
+    <div class="d-flex justify-content-end mt-4">
+      <button
+        type="button"
+        class="btn btn-secondary me-2"
+        data-bs-dismiss="modal"
+        (click)="close()"
+      >
+        Close
+      </button>
+      <button type="button" class="btn btn-primary" (click)="bookVisit()" >Add Visit</button>
+    </div>
+  </form>
+</div>
