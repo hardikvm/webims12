@@ -18,6 +18,7 @@ app.use('/api/user', userRouter);
 app.use('/api/main', travelRoute);
 app.use('/api/main', mainRouter);
 // Connect to MongoDB and start the server
+
 mongoose.connect('mongodb+srv://hardik:Meditab%40123@hackathon.i37y2.mongodb.net/?retryWrites=true&w=majority&appName=hackathon')
     .then(() => app.listen(3000))
     .then(() => {
